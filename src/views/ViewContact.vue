@@ -78,7 +78,7 @@ export default {
     return {
       contactId: this.$route.params.contactId,
       loading: false,
-      contact: [],
+      contact: {},
       group: {},
       errorMessage: null,
     };

@@ -93,7 +93,10 @@
                   class="btn btn-primary my-1"
                   ><i class="fa fa-pen"></i
                 ></router-link>
-                <button class="btn btn-danger my-1">
+                <button
+                  class="btn btn-danger my-1"
+                  @click="submitDeleteContact(contact.id)"
+                >
                   <i class="fa fa-trash"></i>
                 </button>
               </div>
@@ -121,7 +124,7 @@ export default {
   created: async function () {
     try {
       this.loading = true;
-      let response = await ContactService.getAllContacts();
+      let response = await ContactService.getAllContacts(this.contacts.id);
       this.contacts = response.data;
       this.loading = false;
     } catch (error) {
@@ -129,7 +132,22 @@ export default {
       this.loading = false;
     }
   },
-  methods: {},
+  methods: {
+    submitDeleteContact: async function (contactId) {
+      try {
+        this.loading = true;
+        let response = await ContactService.deleteContact(contactId);
+        if (response) {
+          this.loading = true;
+          let response = await ContactService.getAllContacts();
+          this.contacts = response.data;
+          this.loading = false;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
   components: { Spinner },
 };
 </script>
