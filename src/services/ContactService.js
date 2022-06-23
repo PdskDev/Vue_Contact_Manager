@@ -10,25 +10,25 @@ export class ContactService {
   }
   //Get single contact
   static getOneContact(contactID) {
-    let dataURL = `${this.dataURL}/contacts/${contactID}`;
+    let dataURL = `${this.serverURL}/contacts/${contactID}`;
     return axios.get(dataURL);
   }
 
   //Create contact
   static createContact(contact) {
-    let dataURL = `${this.dataURL}/contacts/`;
+    let dataURL = `${this.serverURL}/contacts/`;
     return axios.post(dataURL, contact);
   }
 
   //Update contact
   static updateContact(contact, contactID) {
-    let dataURL = `${this.dataURL}/contacts/${contactID}`;
+    let dataURL = `${this.serverURL}/contacts/${contactID}`;
     return axios.put(dataURL, contact);
   }
 
   //Delete contact
   static deleteContact(contactID) {
-    let dataURL = `${this.dataURL}/contacts/${contactID}`;
+    let dataURL = `${this.serverURL}/contacts/${contactID}`;
     return axios.delete(dataURL);
   }
 

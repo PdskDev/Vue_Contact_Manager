@@ -1,13 +1,22 @@
 <template>
-<h2>Spinner</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img
+          src="../assets/loading_anim3.gif"
+          alt=""
+          class="d-block text-center m-auto"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Spinner"
-}
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Spinner',
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

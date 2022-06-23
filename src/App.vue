@@ -1,16 +1,14 @@
 <template>
-  <NavBar/>
-  <RouterView/>
+  <NavBar />
+  <RouterView />
 </template>
 
 <script>
-import NavBar from "@/components/NavBar";
+import NavBar from '@/components/NavBar';
 export default {
   name: 'App',
-  components: {NavBar}
-}
+  components: { NavBar },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
